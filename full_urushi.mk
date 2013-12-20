@@ -13,7 +13,7 @@
 # limitations under the License.
 
 # Inherit from those products. Most specific first.
-$(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
+$(call inherit-product, $(SRC_TARGET_DIR)/product/aosp_base_telephony.mk)
 
 # Inherit from urushi device
 $(call inherit-product, device/semc/urushi/urushi.mk)
@@ -28,3 +28,7 @@ PRODUCT_DEVICE := urushi
 PRODUCT_BRAND := SEMC
 PRODUCT_MANUFACTURER := SEMC
 PRODUCT_MODEL := Xperia Ray
+PRODUCT_PACKAGES += Apollo
+
+$(call inherit-product, device/semc/urushi/urushi.mk)
+$(call inherit-product-if-exists, vendor/semc/urushi/urushi-vendor.mk)
